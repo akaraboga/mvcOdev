@@ -1,0 +1,57 @@
+﻿@model Veriler //Veriler modelinden veri çekme
+
+
+
+<table class="table">
+
+    <thead>
+    <th>#</th>
+    <th>Adı</th>
+    <th>Soyadı</th>
+    <th>Email</th>
+
+    </thead>
+    <tbody>
+
+        @foreach (var musteri in Model.musteri)//Musterinin ozellikler
+        {
+            <tr>
+                <td>@musteri.id</td>
+                <td>@musteri.Ad</td>
+                <td>@musteri.SoyAd</td>
+                <td>@musteri.email</td>
+            </tr>
+        }
+
+
+
+     <h3>Siparişleri</h3> 
+
+
+    <thead>
+    <th>Ürün İd</th>
+    <th>Ürün Adı</th>
+    <th>Ürün fiyatı</th>
+    <th>Ürün adeti</th>
+    </thead>
+
+
+        @foreach (var siparis in Model.siparis)//Siparişleri
+        {
+        <tr>
+
+            <td>@siparis.Siparis_id</td>
+            <td>@siparis.UrunAdı</td>
+            <td>@siparis.Fiyat</td>
+            <td>@siparis.SiparisAdet</td>
+
+        </tr>
+        }
+
+        
+
+    </tbody>
+
+</table>
+
+
